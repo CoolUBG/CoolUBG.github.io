@@ -19,14 +19,14 @@ function setDefaultValuesIfPrimaryColorMissing() {
         customisationData === [
             '/background2.png',
             '#111e2c',
-            '#C20E0F',
+            '#3b000a',
             '100'
         ].join('\n')
     ) {
         const defaultCustomisation = [
             '/background2.png',  // Default preset GO TO LINE 432
             '#111e2c',          
-            '#C20E0F',         
+            '#3b000a',         
             '100',
             'default'   
 
