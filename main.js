@@ -17,18 +17,18 @@ function setDefaultValuesIfPrimaryColorMissing() {
         !customisationData || 
         customisationData.split('\n')[1] === '' || 
         customisationData === [
-            '/background2.png',
-            '#111e2c',
-            '#3b000a',
-            '100'
+        '/background3.png',
+        '#000000',          
+        '#d4c196',         
+        '100',
         ].join('\n')
     ) {
         const defaultCustomisation = [
-            '/background2.png',  // Default preset GO TO LINE 432
-            '#111e2c',          
-            '#3b000a',         
-            '100',
-            'default'   
+        '/background3.png',
+        '#000000',          
+        '#d4c196',         
+        '100',
+        'default'
 
         ].join('\n');
 
