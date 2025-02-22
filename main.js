@@ -17,17 +17,17 @@ function setDefaultValuesIfPrimaryColorMissing() {
         !customisationData || 
         customisationData.split('\n')[1] === '' || 
         customisationData === [
-            '/background.png',
+            '/background2.png',
             '#111e2c',
-            '#58aafc',
+            '#C20E0F',
             '100'
         ].join('\n')
     ) {
         const defaultCustomisation = [
-            '',  // Default preset GO TO LINE 432
-            '',          
-            '',         
-            '',
+            '/background2.png',  // Default preset GO TO LINE 432
+            '#111e2c',          
+            '#C20E0F',         
+            '100',
             'default'   
 
         ].join('\n');
@@ -49,7 +49,7 @@ setDefaultValuesIfPrimaryColorMissing();
 function loadIframe() {
     // If gameName is "none", stop the function from executing
 
-    var iframeSrc = 'https://coolubg.github.io/coolubg-list/'; // VERY IMPORTANT THIS IS WHERE THE URL FOR THE GAMES IS KEPT SO IF YOU WANT TO USE YOUR OWN WEBSITE THEN CHANGE THIS LINK!
+    var iframeSrc = 'https://catgamessite.github.io/catgames-list/'; // VERY IMPORTANT THIS IS WHERE THE URL FOR THE GAMES IS KEPT SO IF YOU WANT TO USE YOUR OWN WEBSITE THEN CHANGE THIS LINK!
     // var gameVariable = getGameVariable();
     iframeSrc += gameName;
 
