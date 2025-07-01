@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>Cool Unblocked Games</title> <!-- Title gets replaced by games-info.js-->
+  <title>Cool Unblocked Games</title>
+  <!-- Title gets replaced by games-info.js -->
   <link rel="stylesheet" type="text/css" href="/games.css">
 
+  <!-- Only include AdSense script ONCE per page -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4293684626558852" crossorigin="anonymous"></script>
+  <style>
+    .important {
+      background-color: transparent !important;
+    }
+  </style>
   <script src="/main.js" defer></script>
-  <script src="/tracking.js"></script>
-  
+  <script src="/tracking.js" defer></script>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const query = window.location.search;
       const queryParam = query.substring(1);  // Get the query parameter
       const titleText = queryParam;
-
 
       console.log("Query Param:", queryParam);
 
@@ -40,7 +46,6 @@
           description = "No description available.";
         }
 
-       
         // Add the appropriate content to game container
         if (pageEntry.fileType === "html") {
           // Add an iframe for HTML games
@@ -52,11 +57,8 @@
           gameIframe.width = "800";
           gameIframe.height = "600";
           gameIframe.frameBorder = "0";
-
-          // Append iframe inside #game-container
           gameContainer.appendChild(gameIframe);
           console.log("HTML game added successfully.");
-
         } else if (pageEntry.fileType === "flash" || pageEntry.fileType === "swf") {
           // Add an SWF embed for Flash games
           console.log("Attempting to add Flash game...");
@@ -66,8 +68,6 @@
           flashEmbed.width = "800";
           flashEmbed.height = "600";
           flashEmbed.frameBorder = "0";
-
-          // Append embed inside #game-container
           gameContainer.appendChild(flashEmbed);
           console.log("Flash game added successfully.");
         }
@@ -79,23 +79,34 @@
     });
   </script>
 </head>
-
 <body>
   <div id="navbar-container"></div>
   <div class="navbar-spacer"></div>
-
-
 
   <div id="poll-banner">
     <button id="poll-button" style="width: fit-content; background-color: black; border: 2px solid var(--background-color-text) !important; color: var(--background-color-text) !important;" data-poll-id="0004" data-poll-link="https://docs.google.com/forms/d/e/1FAIpQLSegRHcNKE68OOLd09AV2C1ZRPxFzd-WiDLN6GqiZBkDhiG9lQ/viewform?usp=dialog">Do the Poll please please do the poll! please?</button>
   </div>
   
+  <!-- Horizontal AdSense ad under poll button -->
+  <div class="important" style="width:100%;text-align:center;margin:16px 0;max-width: 900px;max-height: 120px;margin-left:auto;margin-right:auto;">
+    <ins class="adsbygoogle"
+         style="display:block;max-width:900px;max-height:120px;width:100%;min-width:720px;min-height:90px;margin-left:auto;margin-right:auto;"
+         data-ad-client="ca-pub-4293684626558852"
+         data-ad-slot="9588548509"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
   <script>
+    // Poll logic
     const button = document.getElementById("poll-button");
     const pollKey = "Weekly Poll";
   
     function getStoredPolls() {
-      return (localStorage.getItem(pollKey) || "").split("\n");
+      return (localStorage.getItem(pollKey) || "").split("\n").filter(Boolean);
     }
   
     function hasVoted(pollId) {
@@ -104,8 +115,10 @@
   
     function storePoll(pollId) {
       const polls = getStoredPolls();
-      polls.push(pollId);
-      localStorage.setItem(pollKey, polls.join("\n"));
+      if (!polls.includes(pollId)) {
+        polls.push(pollId);
+        localStorage.setItem(pollKey, polls.join("\n"));
+      }
     }
   
     const pollId = button.getAttribute("data-poll-id");
@@ -122,25 +135,53 @@
     });
   </script>
   
-
+  <!-- Left Ad Container -->
   <div class="important"
     style="position: absolute; left: 1%; top: 175px; width: 10%; height: 78%; max-width: 140px; max-height: 564px; background-color: rgba(0,0,0,0);">
-    <!-- Original ad code -->
-    <script defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4293684626558852"
-      crossorigin="anonymous"></script>
-    <ins class="adsbygoogle" style="display: inline-block; width: 140px; height: 564px"
-      data-ad-client="ca-pub-4293684626558852" data-ad-slot="6738911587"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <ins class="adsbygoogle"
+      style="display: inline-block; width: 140px; height: 564px"
+      data-ad-client="ca-pub-4293684626558852"
+      data-ad-slot="6738911587"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </div>
+  
+  <!-- Right Ad Container -->
   <div class="important"
-  style="position: absolute; right: 1%; top: 175px; width: 10%; height: 78%; max-width: 140px; max-height: 564px; background-color: rgba(0,0,0,0.0);">
-  <!-- Original ad code -->
-  <script defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4293684626558852"
-    crossorigin="anonymous"></script>
-  <ins class="adsbygoogle" style="display: inline-block; width: 140px; height: 564px"
-    data-ad-client="ca-pub-4293684626558852" data-ad-slot="6738911587"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
+    style="position: absolute; right: 1%; top: 175px; width: 10%; height: 78%; max-width: 140px; max-height: 564px; background-color: rgba(0,0,0,0.0);">
+    <ins class="adsbygoogle"
+      style="display: inline-block; width: 140px; height: 564px"
+      data-ad-client="ca-pub-4293684626558852"
+      data-ad-slot="6738911587"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+   <!-- Left Ad Container -->
+  <div class="important"
+    style="position: absolute; left: 1%; top: calc(175px + 570px); width: 10%; height: 78%; max-width: 140px; max-height: 564px; background-color: rgba(0,0,0,0);">
+    <ins class="adsbygoogle"
+      style="display: inline-block; width: 140px; height: 564px"
+      data-ad-client="ca-pub-4293684626558852"
+      data-ad-slot="6738911587"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  
+  <!-- Right Ad Container -->
+  <div class="important"
+    style="position: absolute; right: 1%; top: calc(175px + 570px); width: 10%; height: 78%; max-width: 140px; max-height: 564px; background-color: rgba(0,0,0,0.0);">
+    <ins class="adsbygoogle"
+      style="display: inline-block; width: 140px; height: 564px"
+      data-ad-client="ca-pub-4293684626558852"
+      data-ad-slot="6738911587"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  
   <!-- Game container where the iframe or SWF will be inserted -->
   <div id="game-container">
     <div id="titlebar-container"></div>
@@ -154,7 +195,5 @@
   <script src="/js/games-info.js"></script>
   <script src="/js/related-games.js"></script>
   <script src="/js/playtime.js"></script>
-
 </body>
-
 </html>
