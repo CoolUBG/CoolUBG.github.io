@@ -2435,8 +2435,8 @@ const pagesData = [
     date: "09-09-2024",
     update_Date: "31-01-2025",
     release_Date: "08-09-2011",
-    authors: ["Edmund McMillen and Florian Himsl"],
-    authorLinks: ["https://bluebaby.newgrounds.com/"],
+    authors: ["Edmund McMillen", "Florian Himsl"],
+    authorLinks: ["https://bluebaby.newgrounds.com/", ""],
     description: "No Description Available"
   },
   {
